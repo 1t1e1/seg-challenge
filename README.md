@@ -1,6 +1,8 @@
-## TODOS
+## TOD0S
 
-- [ ] axios,
+- [ ] useReducer kullan
+- [ ] Redux a gecis.
+- [ ] Redux-thunk a gecis.
 
 ## HOW TO RUN
 
