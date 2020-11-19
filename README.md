@@ -1,8 +1,8 @@
 ## TOD0S
 
 - [x] useReducer kullan
-- [ ] Redux a gecis.
-- [ ] Redux-thunk a gecis.
+- [x] Redux a gecis.
+- [x] Redux-thunk a gecis.
 
 ## HOW TO RUN
 
