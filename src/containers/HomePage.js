@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-import CardsContainer from "../componets/CardsContainer";
+import CardsContainer from "../components/CardsContainer";
 
 const API_ENDPOINT = "https://proto.segmentify.com/sample_products.json";
 // "http://proto.segmentify.com/sample_products.json";
