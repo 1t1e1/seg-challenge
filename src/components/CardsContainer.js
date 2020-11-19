@@ -16,8 +16,8 @@ export default function CardsContainer({ data, isLoading }) {
 			<div>
 				<p> data came.</p>
 				<ol>
-					{data.map((wine, index) => (
-						<Card {...wine}></Card>
+					{data.map((wine) => (
+						<Card key={wine.productId} {...wine}></Card>
 					))}
 				</ol>
 			</div>

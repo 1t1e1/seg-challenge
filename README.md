@@ -1,6 +1,6 @@
 ## TOD0S
 
-- [ ] useReducer kullan
+- [x] useReducer kullan
 - [ ] Redux a gecis.
 - [ ] Redux-thunk a gecis.
 
