@@ -1,6 +1,7 @@
 import React from "react";
+import { Col, Row } from "reactstrap";
 
-import Card from "./Card";
+import CustomCard from "./Card";
 
 export default function CardsContainer({ data, isLoading }) {
 	if (isLoading) return <div>Loading</div>;
@@ -13,14 +14,13 @@ export default function CardsContainer({ data, isLoading }) {
 		);
 	} else {
 		return (
-			<div>
-				<p> data came.</p>
-				<ol>
-					{data.map((wine) => (
-						<Card key={wine.productId} {...wine}></Card>
-					))}
-				</ol>
-			</div>
+			<Row>
+				{data.map((wine) => (
+					<Col md={3} key={wine.productId}>
+						<CustomCard {...wine}></CustomCard>
+					</Col>
+				))}
+			</Row>
 		);
 	}
 }

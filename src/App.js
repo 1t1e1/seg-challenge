@@ -1,11 +1,7 @@
 import HomePage from "./containers/HomePage";
 
 function App() {
-	return (
-		<div className="App">
-			<HomePage></HomePage>
-		</div>
-	);
+	return <HomePage></HomePage>;
 }
 
 export default App;

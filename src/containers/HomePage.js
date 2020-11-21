@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Container, Row } from "reactstrap";
 
 import CardsContainer from "../components/CardsContainer";
 import { getData } from "../state/ducks/homePage/actions";
@@ -19,8 +20,8 @@ export default function HomePage() {
 	}, [dispatch]);
 
 	return (
-		<div>
+		<Container>
 			<CardsContainer isLoading={isLoading} data={data}></CardsContainer>
-		</div>
+		</Container>
 	);
 }

@@ -1,8 +1,8 @@
 ## TOD0S
 
-- [x] useReducer kullan
-- [x] Redux a gecis.
-- [x] Redux-thunk a gecis.
+- [ ] Basic Style, Bootstrap etc.
+- [ ] redux filter, sort
+- [ ] Detail page.
 
 ## HOW TO RUN
 
