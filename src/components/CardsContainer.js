@@ -16,7 +16,7 @@ export default function CardsContainer({ data, isLoading }) {
 		return (
 			<Row>
 				{data.map((wine) => (
-					<Col md={3} key={wine.productId}>
+					<Col xs={6} md={3} key={wine.productId}>
 						<CustomCard {...wine}></CustomCard>
 					</Col>
 				))}

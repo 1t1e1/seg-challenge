@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Container, Row } from "reactstrap";
 
 import CardsContainer from "../components/CardsContainer";
+import CompanyPic from "../components/CompanyPic";
+import SimpleNavbar from "../components/SimpleNavbar";
 import { getData } from "../state/ducks/homePage/actions";
 
 const API_ENDPOINT = "https://proto.segmentify.com/sample_products.json";
@@ -20,7 +22,9 @@ export default function HomePage() {
 	}, [dispatch]);
 
 	return (
-		<Container>
+		<Container fluid>
+			<SimpleNavbar> </SimpleNavbar>
+			<CompanyPic></CompanyPic>
 			<CardsContainer isLoading={isLoading} data={data}></CardsContainer>
 		</Container>
 	);

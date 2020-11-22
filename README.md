@@ -1,8 +1,11 @@
 ## TOD0S
 
-- [ ] Basic Style, Bootstrap etc.
 - [ ] redux filter, sort
-- [ ] Detail page.
+
+### STYLES TO DOS
+
+- [ ] Navbar in altina resim, sirket ismi gibi birseyler guzel olur.
+- [ ] Detail syafasini modal, popup olarak yap.
 
 ## HOW TO RUN
 
