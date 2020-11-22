@@ -1,7 +1,7 @@
 import * as Actions from "./types";
 
 const initialState = {
-	data: "",
+	data: [],
 	content: "",
 	isLoading: false,
 	isError: false,
@@ -32,7 +32,7 @@ function dataReducer(state = initialState, action) {
 			return {
 				...state,
 				content: state.data.filter((item) =>
-					item.name.toLowerCase().includes(action.payload.trim())
+					item.name.toLowerCase().includes(action.payload.trim().toLowerCase())
 				),
 			};
 		default:

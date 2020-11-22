@@ -13,16 +13,10 @@ export default function CardsContainer() {
 
 	if (isLoading) return <div>Loading</div>;
 
-	if (!content.length) {
-		return (
-			<div>
-				<p> data length is zero.</p>
-			</div>
-		);
-	} else {
-		return (
-			<>
-				<SortAndSearch></SortAndSearch>
+	return (
+		<>
+			<SortAndSearch></SortAndSearch>
+			{content.length ? (
 				<Row>
 					{content.map((wine) => (
 						<Col xs={6} md={3} key={wine.productId}>
@@ -30,7 +24,11 @@ export default function CardsContainer() {
 						</Col>
 					))}
 				</Row>
-			</>
-		);
-	}
+			) : (
+				<div>
+					<p> There is no found data. </p>
+				</div>
+			)}
+		</>
+	);
 }
