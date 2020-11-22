@@ -14,8 +14,6 @@ import {
 import "./Card.css";
 
 const CustomCard = (props) => {
-	// console.log("CustomCard -> props", props);
-	// console.log("CustomCard -> props.image", props.image);
 	return (
 		<Card className="text-center">
 			<Row>
@@ -30,11 +28,14 @@ const CustomCard = (props) => {
 				<Col md="12">
 					<CardBody>
 						<CardTitle tag="h4">{props.name}</CardTitle>
-						<CardSubtitle tag="h6" className="mb-2 text-muted">
+						{/* <CardSubtitle tag="h6" className="mb-2 text-muted">
 							{props.brand}
-						</CardSubtitle>
-						<CardText>${props.price}</CardText>
-						<Button>Buy</Button>
+						</CardSubtitle> */}
+						<CardText></CardText>
+						<Button>
+							${props.price}
+							Buy
+						</Button>
 					</CardBody>
 				</Col>
 			</Row>

@@ -1,6 +1,9 @@
 ## TOD0S
 
-- [ ] redux filter, sort
+- [ ] Arama (name field'ı üzerinden)
+- [ ] Filtreleme (inStock field'ı üzerinden)
+- [ ] Sorting (price field'ı üzerinden)
+- [ ] Detayı görüntüleme
 
 ### STYLES TO DOS
 

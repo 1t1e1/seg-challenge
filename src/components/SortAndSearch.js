@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import {
 	InputGroup,
 	InputGroupButtonDropdown,
@@ -14,8 +15,12 @@ import {
 
 const SortAndSearch = (props) => {
 	const [dropdownOpen, setDropdownOpen] = useState(false);
-
 	const toggleDropDown = () => setDropdownOpen(!dropdownOpen);
+
+	// const dispatch = useDispatch();
+	// useEffect(() => {
+	// 	dispatch(search(searchTerm));
+	// }, [dispatch]);
 
 	return (
 		<Row className="mb-3">
