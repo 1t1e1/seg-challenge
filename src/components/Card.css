@@ -1,3 +1,16 @@
+.product-indirim {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	font-weight: bold;
+	background-color: rgba(44, 194, 77, 0.3);
+	z-index: 1;
+	border: 1px solid blanchedalmond;
+	padding: 5px;
+	border-radius: 10px;
+	transform: rotate(-20deg);
+}
+
 .img-wine {
 	width: 30%;
 }

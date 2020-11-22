@@ -13,15 +13,6 @@ import {
 
 import "./Card.css";
 
-// export default function Card(prop) {
-// 	return (
-// 		<li key={prop.productId}>
-// 			prince={prop.price} name={prop.name} brand={prop.brand}
-// 		</li>
-// 	);
-// }
-//
-
 const CustomCard = (props) => {
 	// console.log("CustomCard -> props", props);
 	// console.log("CustomCard -> props.image", props.image);
@@ -29,6 +20,7 @@ const CustomCard = (props) => {
 		<Card className="text-center">
 			<Row>
 				<Col md="12">
+					<span className="product-indirim">FIRSAT!</span>
 					<CardImg
 						className="img-wine"
 						src={props.image}

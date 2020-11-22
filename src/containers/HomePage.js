@@ -4,6 +4,7 @@ import { Container, Row } from "reactstrap";
 
 import CardsContainer from "../components/CardsContainer";
 import CompanyPic from "../components/CompanyPic";
+import SortAndSearch from "../components/SortAndSearch";
 import SimpleNavbar from "../components/SimpleNavbar";
 import { getData } from "../state/ducks/homePage/actions";
 
@@ -25,6 +26,7 @@ export default function HomePage() {
 		<Container fluid>
 			<SimpleNavbar> </SimpleNavbar>
 			<CompanyPic></CompanyPic>
+			<SortAndSearch></SortAndSearch>
 			<CardsContainer isLoading={isLoading} data={data}></CardsContainer>
 		</Container>
 	);

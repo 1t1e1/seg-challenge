@@ -6,6 +6,8 @@
 
 - [ ] Navbar in altina resim, sirket ismi gibi birseyler guzel olur.
 - [ ] Detail syafasini modal, popup olarak yap.
+- [ ] Search a buyutec symbolu koymayi unutma.
+- [ ] Wine Selection yazinini guzellestir.
 
 ## HOW TO RUN
 

@@ -4,7 +4,7 @@ import { Navbar, NavbarBrand } from "reactstrap";
 
 import bgimage from "../red-wine-wallpaper-1.jpg";
 
-const Example = (props) => {
+const CustomNavbar = (props) => {
 	return (
 		<Navbar
 			color="dark"
@@ -29,4 +29,4 @@ Navbar.propTypes = {
 	// pass in custom element to use
 };
 
-export default Example;
+export default CustomNavbar;
