@@ -17,4 +17,13 @@ const getData = (url) => {
 	};
 };
 
-export { getData };
+const searchWine = (wineName) => {
+	return (dispatch) => {
+		dispatch({
+			type: Actions.SEARCH,
+			payload: wineName,
+		});
+	};
+};
+
+export { getData, searchWine };

@@ -2,6 +2,7 @@ import * as Actions from "./types";
 
 const initialState = {
 	data: "",
+	content: "",
 	isLoading: false,
 	isError: false,
 	errorMessage: "",
@@ -18,6 +19,7 @@ function dataReducer(state = initialState, action) {
 			return {
 				...state,
 				data: action.payload,
+				content: action.payload,
 				isLoading: false,
 			};
 		case Actions.FAILURE:
@@ -25,6 +27,13 @@ function dataReducer(state = initialState, action) {
 				...state,
 				errorMessage: action.payload && "Error message from homepage reducer.",
 				isLoading: false,
+			};
+		case Actions.SEARCH:
+			return {
+				...state,
+				content: state.data.filter((item) =>
+					item.name.toLowerCase().includes(action.payload.trim())
+				),
 			};
 		default:
 			return state;
