@@ -2,7 +2,7 @@ import * as Actions from "./types";
 
 const initialState = {
 	data: [],
-	content: "",
+	content: [],
 	isLoading: false,
 	isError: false,
 	errorMessage: "",
@@ -37,33 +37,41 @@ function dataReducer(state = initialState, action) {
 			};
 
 		case Actions.FILTER_STOCK:
-			let isTrue = "true" == action.payload;
-			if (isTrue) {
-				return {
-					...state,
-					content: state.data.filter((item) => item.inStock == isTrue),
-				};
-			} else {
-				return {
-					...state,
-					content: state.data,
-				};
-			}
-
-		case Actions.SORT:
-			console.log("reducer workd payload", action.payload);
-			// if()
-			// if (isTrue) {
-			// 	return {
-			// 		...state,
-			// 		content: state.data.filter((item) => item.inStock == isTrue),
-			// 	};
-			// } else {
 			return {
 				...state,
-				// content: state.data,
+				content: state.data.filter((item) => item.inStock),
 			};
-		// }
+
+		case Actions.DEFAULT_ORDER:
+			return {
+				...state,
+				content: state.data,
+			};
+
+		case Actions.SORT:
+			let compareFunc = function (a, b) {
+				let _a = parseFloat(a.price), // If the values are integers only, parseInt will do too
+					_b = parseFloat(b.price);
+				console.log(`a is ${_a}, b is ${_b} a-b ${_a - _b}`);
+				if (_a - _b === 0) {
+					return _a < _b ? 1 : -1;
+				} else {
+					return _a - _b;
+				}
+				// return parseFloat(a.price) < parseFloat(b.price);
+			};
+
+			let data = [...state.content];
+
+			let arr = data.sort(compareFunc);
+
+			arr.forEach((item, index) => {
+				console.log("reducer check", item.price);
+			});
+			return {
+				...state,
+				content: arr,
+			};
 
 		default:
 			console.log("default workd");

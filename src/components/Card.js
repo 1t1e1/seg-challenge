@@ -14,7 +14,7 @@ import {
 import "./Card.css";
 
 const CustomCard = (props) => {
-	console.log(props.inStock);
+	// console.log(props);
 	return (
 		<Card className="text-center">
 			<Row>

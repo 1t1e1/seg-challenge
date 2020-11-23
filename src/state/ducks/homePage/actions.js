@@ -18,33 +18,33 @@ const getData = (url) => {
 };
 
 const searchWine = (wineName) => {
-	return (dispatch) => {
-		dispatch({
-			type: Actions.SEARCH,
-			payload: wineName,
-		});
+	return {
+		type: Actions.SEARCH,
+		payload: wineName,
 	};
 };
 
 const filterStock = (str) => {
-	return (dispatch) => {
-		dispatch({
+	if (str == "true") {
+		return {
 			type: Actions.FILTER_STOCK,
-			payload: str,
-		});
-	};
+		};
+	} else {
+		return {
+			type: Actions.DEFAULT_ORDER,
+		};
+	}
 };
 
 const sortByPrice = (direction) => {
 	console.log("in action ", direction);
+	console.log("in action if", direction == "default");
 	if (direction == "default") {
-		return (dispatch) => {
-			dispatch({
-				type: Actions.SORT,
-				payload: direction,
-			});
+		return {
+			type: Actions.DEFAULT_ORDER,
 		};
 	} else {
+		console.log("in action second", direction);
 		return (dispatch) => {
 			dispatch({
 				type: Actions.SORT,
