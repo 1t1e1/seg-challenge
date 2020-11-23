@@ -35,7 +35,38 @@ function dataReducer(state = initialState, action) {
 					item.name.toLowerCase().includes(action.payload.trim().toLowerCase())
 				),
 			};
+
+		case Actions.FILTER_STOCK:
+			let isTrue = "true" == action.payload;
+			if (isTrue) {
+				return {
+					...state,
+					content: state.data.filter((item) => item.inStock == isTrue),
+				};
+			} else {
+				return {
+					...state,
+					content: state.data,
+				};
+			}
+
+		case Actions.SORT:
+			console.log("reducer workd payload", action.payload);
+			// if()
+			// if (isTrue) {
+			// 	return {
+			// 		...state,
+			// 		content: state.data.filter((item) => item.inStock == isTrue),
+			// 	};
+			// } else {
+			return {
+				...state,
+				// content: state.data,
+			};
+		// }
+
 		default:
+			console.log("default workd");
 			return state;
 	}
 }

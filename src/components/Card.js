@@ -14,11 +14,12 @@ import {
 import "./Card.css";
 
 const CustomCard = (props) => {
+	console.log(props.inStock);
 	return (
 		<Card className="text-center">
 			<Row>
 				<Col md="12">
-					<span className="product-indirim">FIRSAT!</span>
+					<span className="product-indirim">{props.priceText}</span>
 					<CardImg
 						className="img-wine"
 						src={props.image}
@@ -31,9 +32,9 @@ const CustomCard = (props) => {
 						{/* <CardSubtitle tag="h6" className="mb-2 text-muted">
 							{props.brand}
 						</CardSubtitle> */}
-						<CardText></CardText>
+						<CardText>{props.inStock ? "Var" : "Yok"}</CardText>
 						<Button>
-							${props.price}
+							{props.priceText + " "}
 							Buy
 						</Button>
 					</CardBody>

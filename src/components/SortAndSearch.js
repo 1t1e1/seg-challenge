@@ -18,13 +18,15 @@ import {
 	Button,
 } from "reactstrap";
 
-import { searchWine } from "../state/ducks/homePage/actions";
+import {
+	searchWine,
+	filterStock,
+	sortByPrice,
+} from "../state/ducks/homePage/actions";
 
 const SortAndSearch = (props) => {
-	const [dropdownOpen, setDropdownOpen] = useState(false);
 	const [searchTerm, setSearchTerm] = useState("");
 	const [searchFilter, setSearchFilter] = useState("");
-	const toggleDropDown = () => setDropdownOpen(!dropdownOpen);
 
 	const dispatch = useDispatch();
 	const handleSearch = (e) => {
@@ -41,14 +43,24 @@ const SortAndSearch = (props) => {
 		setSearchFilter("");
 	};
 
+	const handleDropDown = (e) => {
+		dispatch(filterStock(e.target.value));
+		console.log("handle dd", e.target.value);
+	};
+
+	const handleSort = (e) => {
+		dispatch(sortByPrice(e.target.value));
+		console.log("handle sort", e.target.value);
+	};
+
 	return (
 		<>
 			<Row className="mb-3">
-				<Col md={3} xs={3}>
+				<Col md="auto" xs="auto">
 					<h3 className="wine-selection-title"> Wine Selection </h3>
 				</Col>
 				<Col
-					xs={{ size: "3", offset: "0", ml: "4" }}
+					xs={{ size: "auto", offset: "0", ml: "1" }}
 					md={{ size: "3", offset: "0", ml: "4" }}
 				>
 					<Form onSubmit={handleSearch}>
@@ -65,26 +77,20 @@ const SortAndSearch = (props) => {
 					</Form>
 				</Col>
 				<Col
-					xs={{ size: "3", offset: 2 }}
-					md={{ size: "3", offset: 2 }}
-					className="justify-content-center d-flex"
+					xs={{ size: "auto", offset: 1 }}
+					md={{ size: "auto", offset: 1 }}
+					className="d-flex justify-content-end"
 				>
-					<InputGroup>
-						<InputGroupButtonDropdown
-							addonType="append"
-							isOpen={dropdownOpen}
-							toggle={toggleDropDown}
-						>
-							<DropdownToggle caret>Button Dropdown</DropdownToggle>
-							<DropdownMenu>
-								<DropdownItem header>Header</DropdownItem>
-								<DropdownItem disabled>Action</DropdownItem>
-								<DropdownItem>Another Action</DropdownItem>
-								<DropdownItem divider />
-								<DropdownItem>Another Action</DropdownItem>
-							</DropdownMenu>
-						</InputGroupButtonDropdown>
-					</InputGroup>
+					<DropDown
+						text="Sort By"
+						options={["default", "dec", "asc"]}
+						handleFunc={handleSort}
+					></DropDown>
+					<DropDown
+						text="Show Only in Stock"
+						options={[true, false]}
+						handleFunc={handleDropDown}
+					></DropDown>
 				</Col>
 			</Row>
 			<Row className="mb-3">
@@ -96,7 +102,7 @@ const SortAndSearch = (props) => {
 };
 
 const Word = (word, handleFunc) => (
-	<Col xs={{ size: "auto", offset: 1 }} md={{ size: "auto", offset: 1 }}>
+	<Col xs={{ size: "auto", offset: 0 }} md={{ size: "auto", offset: 1 }}>
 		<InputGroup>
 			<InputGroupText>{word}</InputGroupText>
 			<InputGroupAddon addonType="append">
@@ -105,5 +111,35 @@ const Word = (word, handleFunc) => (
 		</InputGroup>
 	</Col>
 );
+
+const DropDown = ({ text, options = [], handleFunc }) => {
+	const [dropdownOpen, setDropdownOpen] = useState(false);
+	const toggleDropDown = () => setDropdownOpen(!dropdownOpen);
+
+	return (
+		<InputGroup className="ml-3">
+			<InputGroupButtonDropdown
+				addonType="append"
+				isOpen={dropdownOpen}
+				toggle={toggleDropDown}
+			>
+				<DropdownToggle caret>{text}</DropdownToggle>
+				<DropdownMenu>
+					{options.map((opt) => (
+						<DropdownItem
+							name={opt}
+							value={opt}
+							onClick={(e) => {
+								handleFunc(e);
+							}}
+						>
+							{opt.toString()}
+						</DropdownItem>
+					))}
+				</DropdownMenu>
+			</InputGroupButtonDropdown>
+		</InputGroup>
+	);
+};
 
 export default SortAndSearch;

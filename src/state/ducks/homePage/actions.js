@@ -26,4 +26,32 @@ const searchWine = (wineName) => {
 	};
 };
 
-export { getData, searchWine };
+const filterStock = (str) => {
+	return (dispatch) => {
+		dispatch({
+			type: Actions.FILTER_STOCK,
+			payload: str,
+		});
+	};
+};
+
+const sortByPrice = (direction) => {
+	console.log("in action ", direction);
+	if (direction == "default") {
+		return (dispatch) => {
+			dispatch({
+				type: Actions.SORT,
+				payload: direction,
+			});
+		};
+	} else {
+		return (dispatch) => {
+			dispatch({
+				type: Actions.SORT,
+				payload: direction,
+			});
+		};
+	}
+};
+
+export { getData, searchWine, filterStock, sortByPrice };
