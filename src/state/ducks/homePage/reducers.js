@@ -55,16 +55,15 @@ function dataReducer(state = initialState, action) {
 				if (_a - _b === 0) {
 					return _a < _b ? 1 : -1;
 				} else {
-					if (action.payload == "asc") return _a - _b;
+					if (action.payload === "asc") return _a - _b;
 					return _b - _a;
 				}
 			};
 
 			let data = [...state.content];
-			let arr = data.sort(compareFunc);
 			return {
 				...state,
-				content: arr,
+				content: data.sort(compareFunc),
 			};
 
 		default:

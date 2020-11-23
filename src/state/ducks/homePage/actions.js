@@ -25,7 +25,7 @@ const searchWine = (wineName) => {
 };
 
 const filterStock = (str) => {
-	if (str == "true") {
+	if (str === "true") {
 		return {
 			type: Actions.FILTER_STOCK,
 		};
@@ -37,7 +37,7 @@ const filterStock = (str) => {
 };
 
 const sortByPrice = (direction) => {
-	if (direction == "default") {
+	if (direction === "default") {
 		return {
 			type: Actions.DEFAULT_ORDER,
 		};

@@ -19,8 +19,6 @@ const CustomModal = (props) => {
 		let tastesArray = props.params.tastes.split(",");
 		let tastes = tastesArray.join(" ");
 
-		console.log(props);
-
 		return (
 			<Modal isOpen={modal} toggle={toggle}>
 				<ModalHeader toggle={toggle}>Detail for {props.name}</ModalHeader>

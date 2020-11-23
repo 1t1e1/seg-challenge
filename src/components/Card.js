@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
 	Card,
 	CardImg,
@@ -52,15 +52,14 @@ const CustomCard = (props) => {
 						<CardSubtitle tag="h6" className="mb-2 text-muted">
 							{props.name}
 						</CardSubtitle>
-						<CardText></CardText>
 						<Button
 							color={props.inStock ? "warning" : "secondary"}
 							disabled={!props.inStock}
 						>
 							Buy
 						</Button>
-						<Button color="info" className="ml-5" onClick={toggle}>
-							View Detail
+						<Button color="info" className="ml-2" onClick={toggle}>
+							Detail
 						</Button>
 					</CardBody>
 				</Col>

@@ -12,9 +12,7 @@ import {
 	Col,
 	Form,
 	FormGroup,
-	Label,
 	InputGroupAddon,
-	Badge,
 	Button,
 } from "reactstrap";
 
@@ -46,7 +44,6 @@ const SortAndSearch = (props) => {
 
 	const handleDropDown = (e) => {
 		dispatch(filterStock(e.target.value));
-		console.log("handle dd", e.target.value);
 	};
 
 	const handleSort = (e) => {
@@ -70,7 +67,7 @@ const SortAndSearch = (props) => {
 			<Row className="my-1">
 				<Col
 					xs={{ size: "auto", offset: "auto", ml: "1" }}
-					md={{ size: "3", offset: "auto", ml: "4" }}
+					md={{ size: "3", offset: "1", ml: "4" }}
 				>
 					<Form onSubmit={handleSearch}>
 						<FormGroup>
@@ -86,7 +83,7 @@ const SortAndSearch = (props) => {
 					</Form>
 				</Col>
 				<Col
-					xs={{ size: "auto", offset: "2" }}
+					xs={{ size: "auto", offset: "auto" }}
 					md={{ size: "auto", offset: "2" }}
 					className="d-flex justify-content-end"
 				>
@@ -94,17 +91,19 @@ const SortAndSearch = (props) => {
 						text="Sort By"
 						options={["default", "dec", "asc"]}
 						handleFunc={handleSort}
+						state={sortBy}
 					></DropDown>
 					<DropDown
 						text="Show Only in Stock"
 						options={[true, false]}
 						handleFunc={handleDropDown}
+						choose={filterStock}
 					></DropDown>
 				</Col>
 			</Row>
 			<Row className="mb-1">
-				{searchFilter ? Word(searchFilter, handleFilterDisable) : null}
-				{sortBy ? Word("Sort By " + sortBy, handleSortByDisable) : null}
+				{searchFilter && Word(searchFilter, handleFilterDisable)}
+				{sortBy && Word("Sort By " + sortBy, handleSortByDisable)}
 			</Row>
 		</>
 	);
@@ -121,33 +120,38 @@ const Word = (word, handleFunc) => (
 	</Col>
 );
 
-const DropDown = ({ text, options = [], handleFunc }) => {
+const DropDown = ({ text, options = [], handleFunc, state }) => {
 	const [dropdownOpen, setDropdownOpen] = useState(false);
 	const toggleDropDown = () => setDropdownOpen(!dropdownOpen);
 
+	let title = state ? state : text;
+
 	return (
-		<InputGroup className="ml-3">
-			<InputGroupButtonDropdown
-				addonType="append"
-				isOpen={dropdownOpen}
-				toggle={toggleDropDown}
-			>
-				<DropdownToggle caret>{text}</DropdownToggle>
-				<DropdownMenu>
-					{options.map((opt) => (
-						<DropdownItem
-							name={opt}
-							value={opt}
-							onClick={(e) => {
-								handleFunc(e);
-							}}
-						>
-							{opt.toString()}
-						</DropdownItem>
-					))}
-				</DropdownMenu>
-			</InputGroupButtonDropdown>
-		</InputGroup>
+		<div>
+			<InputGroup className="ml-3">
+				<InputGroupButtonDropdown
+					addonType="append"
+					isOpen={dropdownOpen}
+					toggle={toggleDropDown}
+				>
+					<DropdownToggle caret>{title}</DropdownToggle>
+					<DropdownMenu>
+						{options.map((opt) => (
+							<DropdownItem
+								key={opt}
+								name={opt}
+								value={opt}
+								onClick={(e) => {
+									handleFunc(e);
+								}}
+							>
+								{opt.toString()}
+							</DropdownItem>
+						))}
+					</DropdownMenu>
+				</InputGroupButtonDropdown>
+			</InputGroup>
+		</div>
 	);
 };
 
