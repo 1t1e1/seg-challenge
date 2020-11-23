@@ -55,9 +55,9 @@ const SortAndSearch = (props) => {
 
 	return (
 		<>
-			<Row className="mb-3">
+			<Row className="my-3">
 				<Col md="auto" xs="auto">
-					<h3 className="wine-selection-title"> Wine Selection </h3>
+					<h3 className="wine-selection-title"> Our Selection </h3>
 				</Col>
 				<Col
 					xs={{ size: "auto", offset: "0", ml: "1" }}

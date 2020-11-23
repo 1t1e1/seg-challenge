@@ -37,14 +37,11 @@ const filterStock = (str) => {
 };
 
 const sortByPrice = (direction) => {
-	console.log("in action ", direction);
-	console.log("in action if", direction == "default");
 	if (direction == "default") {
 		return {
 			type: Actions.DEFAULT_ORDER,
 		};
 	} else {
-		console.log("in action second", direction);
 		return (dispatch) => {
 			dispatch({
 				type: Actions.SORT,

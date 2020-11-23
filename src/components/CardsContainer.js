@@ -20,7 +20,6 @@ export default function CardsContainer() {
 		isLoading: state.homePage.isLoading,
 		content: state.homePage.content,
 	}));
-	const [sortedArr, setArr] = useState(content); //.sort(compareFunc));
 
 	if (isLoading) return <div>Loading</div>;
 

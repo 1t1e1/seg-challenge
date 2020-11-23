@@ -50,31 +50,24 @@ function dataReducer(state = initialState, action) {
 
 		case Actions.SORT:
 			let compareFunc = function (a, b) {
-				let _a = parseFloat(a.price), // If the values are integers only, parseInt will do too
+				let _a = parseFloat(a.price),
 					_b = parseFloat(b.price);
-				console.log(`a is ${_a}, b is ${_b} a-b ${_a - _b}`);
 				if (_a - _b === 0) {
 					return _a < _b ? 1 : -1;
 				} else {
-					return _a - _b;
+					if (action.payload == "asc") return _a - _b;
+					return _b - _a;
 				}
-				// return parseFloat(a.price) < parseFloat(b.price);
 			};
 
 			let data = [...state.content];
-
 			let arr = data.sort(compareFunc);
-
-			arr.forEach((item, index) => {
-				console.log("reducer check", item.price);
-			});
 			return {
 				...state,
 				content: arr,
 			};
 
 		default:
-			console.log("default workd");
 			return state;
 	}
 }

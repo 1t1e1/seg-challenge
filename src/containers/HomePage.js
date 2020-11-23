@@ -20,7 +20,7 @@ export default function HomePage() {
 	return (
 		<Container fluid>
 			<SimpleNavbar> </SimpleNavbar>
-			<CompanyPic></CompanyPic>
+			{/* <CompanyPic></CompanyPic> */}
 			<CardsContainer></CardsContainer>
 		</Container>
 	);

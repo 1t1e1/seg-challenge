@@ -1,16 +1,16 @@
 ## TOD0S
 
-- [ ] Arama (name field'ı üzerinden)
-- [ ] Filtreleme (inStock field'ı üzerinden)
-- [ ] Sorting (price field'ı üzerinden)
+- [x] Arama (name field'ı üzerinden)
+- [x] Filtreleme (inStock field'ı üzerinden)
+- [x] Sorting (price field'ı üzerinden)
 - [ ] Detayı görüntüleme
 
 ### STYLES TO DOS
 
 - [ ] Navbar in altina resim, sirket ismi gibi birseyler guzel olur.
 - [ ] Detail syafasini modal, popup olarak yap.
-- [ ] Search a buyutec symbolu koymayi unutma.
-- [ ] Wine Selection yazinini guzellestir.
+- [ ] Search a buyutec symbolu koy.
+- [ ] Our Selection yazinini guzellestir.
 
 ## HOW TO RUN
 
