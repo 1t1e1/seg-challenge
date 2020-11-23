@@ -89,13 +89,34 @@ const SortAndSearch = (props) => {
 				>
 					<DropDown
 						text="Sort By"
-						options={["default", "dec", "asc"]}
+						options={[
+							{
+								value: "",
+								text: "Sort By",
+							},
+							{
+								value: "dec",
+								text: "Dec",
+							},
+							{
+								value: "asc",
+								text: "Asc",
+							},
+						]}
 						handleFunc={handleSort}
 						state={sortBy}
 					></DropDown>
 					<DropDown
-						text="Show Only in Stock"
-						options={[true, false]}
+						options={[
+							{
+								value: true,
+								text: "Only in Stock",
+							},
+							{
+								value: false,
+								text: "All Products",
+							},
+						]}
 						handleFunc={handleDropDown}
 						choose={filterStock}
 					></DropDown>
@@ -103,7 +124,7 @@ const SortAndSearch = (props) => {
 			</Row>
 			<Row className="mb-1">
 				{searchFilter && Word(searchFilter, handleFilterDisable)}
-				{sortBy && Word("Sort By " + sortBy, handleSortByDisable)}
+				{sortBy && Word("Sort By " + sortBy.toUpperCase(), handleSortByDisable)}
 			</Row>
 		</>
 	);
@@ -120,11 +141,9 @@ const Word = (word, handleFunc) => (
 	</Col>
 );
 
-const DropDown = ({ text, options = [], handleFunc, state }) => {
+const DropDown = ({ options = [], handleFunc }) => {
 	const [dropdownOpen, setDropdownOpen] = useState(false);
 	const toggleDropDown = () => setDropdownOpen(!dropdownOpen);
-
-	let title = state ? state : text;
 
 	return (
 		<div>
@@ -134,18 +153,18 @@ const DropDown = ({ text, options = [], handleFunc, state }) => {
 					isOpen={dropdownOpen}
 					toggle={toggleDropDown}
 				>
-					<DropdownToggle caret>{title}</DropdownToggle>
+					<DropdownToggle caret>{options[0].text}</DropdownToggle>
 					<DropdownMenu>
 						{options.map((opt) => (
 							<DropdownItem
-								key={opt}
-								name={opt}
-								value={opt}
+								key={opt.text}
+								name={opt.text}
+								value={opt.value}
 								onClick={(e) => {
 									handleFunc(e);
 								}}
 							>
-								{opt.toString()}
+								{opt.text == "Sort By" ? "Default" : opt.text}
 							</DropdownItem>
 						))}
 					</DropdownMenu>
