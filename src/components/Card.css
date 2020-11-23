@@ -20,9 +20,15 @@
 }
 
 .img-wine {
-	width: 30%;
+	height: 20vh;
+	width: auto;
+}
+
+.img-wine-modal {
+	height: 70vh;
+	width: auto;
 }
 
 .modal-dialog {
-	min-width: 90%; /* New width for default modal */
+	min-width: 80%; /* New width for default modal */
 }

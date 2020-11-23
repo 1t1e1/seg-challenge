@@ -19,18 +19,34 @@ const CustomModal = (props) => {
 		console.log(props);
 		return (
 			<Modal isOpen={modal} toggle={toggle}>
-				<ModalHeader toggle={toggle}>Detail for {props.productId}</ModalHeader>
+				<ModalHeader toggle={toggle}>Detail for {props.name}</ModalHeader>
 				<ModalBody>
 					<Row>
-						<Col xs="4" md="6">
+						<Col xs="4" md="4" className="text-center ">
 							<CardImg
-								className="img-wine"
+								className="img-wine-modal"
 								src={props.image}
 								alt="Card image cap"
 							/>
 						</Col>
 						<Col xs="6" md="6">
-							<h4>{props.name}</h4>
+							<h2>Product Name: {props.name}</h2>
+							<h4>
+								Product Id: <span>{props.productId}</span>
+							</h4>
+
+							<h3 class="text-left">
+								{props.priceText}{" "}
+								<small
+									style={{
+										textDecorationLine: "line-through",
+										textDecorationStyle: "solid",
+										color: "gray",
+									}}
+								>
+									{props.oldPriceText}
+								</small>
+							</h3>
 						</Col>
 					</Row>
 				</ModalBody>
