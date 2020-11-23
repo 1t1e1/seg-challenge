@@ -16,7 +16,11 @@ const CustomModal = (props) => {
 	const toggle = () => setModal(!modal);
 
 	const ModalComp = (props) => {
+		let tastesArray = props.params.tastes.split(",");
+		let tastes = tastesArray.join(" ");
+
 		console.log(props);
+
 		return (
 			<Modal isOpen={modal} toggle={toggle}>
 				<ModalHeader toggle={toggle}>Detail for {props.name}</ModalHeader>
@@ -29,13 +33,13 @@ const CustomModal = (props) => {
 								alt="Card image cap"
 							/>
 						</Col>
-						<Col xs="6" md="6">
+						<Col xs="6" md="6" className="text-left">
 							<h2>Product Name: {props.name}</h2>
 							<h4>
 								Product Id: <span>{props.productId}</span>
 							</h4>
 
-							<h3 class="text-left">
+							<h3>
 								{props.priceText}{" "}
 								<small
 									style={{
@@ -47,6 +51,27 @@ const CustomModal = (props) => {
 									{props.oldPriceText}
 								</small>
 							</h3>
+
+							{tastes && (
+								<h3 className="text-left">
+									<span className="detail-col">Tastes : </span>
+									{tastes}
+								</h3>
+							)}
+
+							{props.brand && (
+								<h3 className="text-left">
+									<span className="detail-col">Brand : </span>
+									{props.brand}
+								</h3>
+							)}
+
+							{props.params.region && (
+								<h3 className="text-left">
+									<span className="detail-col">Region : </span>
+									{props.params.region}
+								</h3>
+							)}
 						</Col>
 					</Row>
 				</ModalBody>

@@ -32,3 +32,7 @@
 .modal-dialog {
 	min-width: 80%; /* New width for default modal */
 }
+
+.detail-col {
+	font-weight: bold;
+}

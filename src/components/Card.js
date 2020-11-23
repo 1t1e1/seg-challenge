@@ -30,7 +30,7 @@ const CustomCard = (props) => {
 						</div>
 					)}
 					<CardImg
-						className="img-wine"
+						className="img-wine mt-3"
 						src={props.image}
 						alt="Card image cap"
 					/>
