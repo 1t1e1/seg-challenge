@@ -9,20 +9,15 @@ import {
 	Button,
 	Row,
 	Col,
-	Modal,
-	ModalHeader,
-	ModalBody,
-	ModalFooter,
 } from "reactstrap";
 import { FcLike } from "react-icons/fc";
 
+import useModal from "./useModal";
 import "./Card.css";
 
 const CustomCard = (props) => {
-	const [modal, setModal] = useState(false);
+	const [toggle, ModalComp] = useModal();
 
-	const toggle = () => setModal(!modal);
-	console.log(props);
 	return (
 		<Card className="text-center mt-3">
 			<Row>
@@ -70,34 +65,7 @@ const CustomCard = (props) => {
 					</CardBody>
 				</Col>
 			</Row>
-			<Modal isOpen={modal} toggle={toggle}>
-				<ModalHeader toggle={toggle}>Detail for {props.productId}</ModalHeader>
-				<ModalBody>
-					<Row>
-						<Col xs="4" md="6">
-							<CardImg
-								className="img-wine"
-								src={props.image}
-								alt="Card image cap"
-							/>
-						</Col>
-						<Col xs="6" md="6">
-							<h4>{props.name}</h4>
-						</Col>
-					</Row>
-				</ModalBody>
-				<ModalFooter>
-					<Button
-						color={props.inStock ? "warning" : "secondary"}
-						onClick={toggle}
-					>
-						Buy One
-					</Button>{" "}
-					<Button color="secondary" onClick={toggle}>
-						Cancel
-					</Button>
-				</ModalFooter>
-			</Modal>
+			<ModalComp {...props}></ModalComp>
 		</Card>
 	);
 };

@@ -11,9 +11,9 @@ const CustomNavbar = (props) => {
 			dark
 			expand="md"
 			style={{ backgroundImage: `url(${bgimage})`, backgroundSize: "cover" }}
-			className="py-2"
+			className="py-5"
 		>
-			<NavbarBrand href="/">reactstrap</NavbarBrand>
+			<NavbarBrand href="/"> {"  "}</NavbarBrand>
 		</Navbar>
 	);
 };

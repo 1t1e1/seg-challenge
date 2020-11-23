@@ -22,3 +22,7 @@
 .img-wine {
 	width: 30%;
 }
+
+.modal-dialog {
+	min-width: 90%; /* New width for default modal */
+}
