@@ -27,6 +27,7 @@ import {
 const SortAndSearch = (props) => {
 	const [searchTerm, setSearchTerm] = useState("");
 	const [searchFilter, setSearchFilter] = useState("");
+	const [sortBy, setSortBy] = useState("");
 
 	const dispatch = useDispatch();
 	const handleSearch = (e) => {
@@ -49,19 +50,27 @@ const SortAndSearch = (props) => {
 	};
 
 	const handleSort = (e) => {
-		dispatch(sortByPrice(e.target.value));
-		console.log("handle sort", e.target.value);
+		let value = e.target.value;
+		if (value === "default") {
+			setSortBy("");
+		} else {
+			setSortBy(value);
+		}
 	};
+	const handleSortByDisable = () => {
+		setSortBy("");
+	};
+
+	useEffect(() => {
+		dispatch(sortByPrice(sortBy));
+	}, [sortBy]);
 
 	return (
 		<>
-			<Row className="my-3">
-				<Col md="auto" xs="auto">
-					<h3 className="wine-selection-title"> Our Selection </h3>
-				</Col>
+			<Row className="my-1">
 				<Col
-					xs={{ size: "auto", offset: "0", ml: "1" }}
-					md={{ size: "3", offset: "0", ml: "4" }}
+					xs={{ size: "auto", offset: "auto", ml: "1" }}
+					md={{ size: "3", offset: "auto", ml: "4" }}
 				>
 					<Form onSubmit={handleSearch}>
 						<FormGroup>
@@ -77,8 +86,8 @@ const SortAndSearch = (props) => {
 					</Form>
 				</Col>
 				<Col
-					xs={{ size: "auto", offset: 1 }}
-					md={{ size: "auto", offset: 1 }}
+					xs={{ size: "auto", offset: "2" }}
+					md={{ size: "auto", offset: "2" }}
 					className="d-flex justify-content-end"
 				>
 					<DropDown
@@ -93,9 +102,9 @@ const SortAndSearch = (props) => {
 					></DropDown>
 				</Col>
 			</Row>
-			<Row className="mb-3">
+			<Row className="mb-1">
 				{searchFilter ? Word(searchFilter, handleFilterDisable) : null}
-				{searchFilter ? Word(searchFilter, handleFilterDisable) : null}
+				{sortBy ? Word("Sort By " + sortBy, handleSortByDisable) : null}
 			</Row>
 		</>
 	);
