@@ -36,3 +36,10 @@
 .detail-col {
 	font-weight: bold;
 }
+
+.turning-effect {
+	transition: all 0.2s ease-in-out;
+}
+.turning-effect:hover {
+	transform: scale(1.1);
+}

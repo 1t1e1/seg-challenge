@@ -1,16 +1,13 @@
 ## TOD0S
 
-- [x] Arama (name field'ı üzerinden)
-- [x] Filtreleme (inStock field'ı üzerinden)
-- [x] Sorting (price field'ı üzerinden)
-- [ ] Detayı görüntüleme
+- [ ] Detayı görüntüleme popup degil de router uzerinde yapilmasi daha ii olur mu?
 
-### STYLES TO DOS
+### STYLES TOD0S
 
-- [ ] Navbar in altina resim, sirket ismi gibi birseyler guzel olur.
-- [ ] Detail syafasini modal, popup olarak yap.
 - [ ] Search a buyutec symbolu koy. Like icin kalp
+- [ ] Navbar in altina resim, sirket ismi gibi birseyler guzel olur.
 - [ ] Our Selection yazinini guzellestir.
+- [ ] Satin al sayaci ekle.
 
 ## HOW TO RUN
 

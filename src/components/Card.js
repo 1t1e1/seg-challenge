@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Children } from "react";
 import {
 	Card,
 	CardImg,
@@ -19,7 +19,7 @@ const CustomCard = (props) => {
 	const [toggle, ModalComp] = useModal();
 
 	return (
-		<Card className="text-center mt-3">
+		<Card className="text-center shadow-lg p-3 mb-5 bg-white rounded turning-effect">
 			<Row>
 				<Col md="12">
 					<span className="product-indirim">{props.priceText}</span>
@@ -52,6 +52,7 @@ const CustomCard = (props) => {
 						<CardSubtitle tag="h6" className="mb-2 text-muted">
 							{props.name}
 						</CardSubtitle>
+						<CardText></CardText>
 						<Button
 							color={props.inStock ? "warning" : "secondary"}
 							disabled={!props.inStock}
