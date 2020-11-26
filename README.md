@@ -5,8 +5,8 @@
 
 ### STYLES TOD0S
 
-- [ ] sass i yukle [issue #2](#2)
 - [ ] filter chip i degistir.
+- [ ] Card hight fixle esit gorunsen. Buttonlar en altina gelsin.
 - [ ] sort and search componenti yazinini guzellestir.
 - [ ] Search a buyutec symbolu koy. Like icin kalp
 - [ ] Navbar in altina resim, sirket ismi gibi birseyler guzel olur.
