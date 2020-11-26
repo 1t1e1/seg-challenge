@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./Card.css";
+import "./Card.sass";
 
 function PriceDisplay(props) {
 	let className = props.className ? props.className : "";

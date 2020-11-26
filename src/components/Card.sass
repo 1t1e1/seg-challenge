@@ -1,0 +1,77 @@
+.kalp-like
+  position: absolute
+  top: 5rem
+  left: 1rem
+  font-weight: bold
+  z-index: 1
+  padding: 5px
+
+.product-indirim
+  position: absolute
+  top: 0.5rem
+  left: 1rem
+  font-weight: bold
+  background-color: rgba(44, 194, 77, 0.3)
+  z-index: 1
+  border: 1px solid blanchedalmond
+  padding: 5px
+  border-radius: 10px
+  transform: rotate(-20deg)
+
+.img-wine
+  height: 20vh
+  width: auto
+
+.img-wine-modal
+  height: 70vh
+  width: auto
+
+.modal-dialog
+  min-width: 80%
+
+.zoom-effect
+  transition: all 0.2s ease-in-out
+  &:hover
+    transform: scale(1.1)
+
+
+.discount-price
+  del
+    color: rgba(255, 0, 0, 0.5)
+    text-decoration: none
+    position: relative
+
+    &:before
+      content: " "
+      display: block
+      width: 100%
+      border-top: 2px solid rgba(255, 0, 0, 0.8)
+      height: 12px
+      position: absolute
+      bottom: -4px
+      left: 0
+      transform: rotate(-7deg)
+
+  ins
+    color: green
+    font-size: 16px
+    text-decoration: none
+    padding: 1em 1em 1em 0.5em
+
+  &.modal-price
+    del
+      font-size: 21px
+
+    ins
+      font-size: 24px
+
+    del:before
+      bottom: 0px
+
+div
+  &.product-title h2
+    font-size: 24px
+  &.product-id h2
+    opacity: 0.4
+    font-size: 14px
+

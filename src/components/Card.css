@@ -1,4 +1,4 @@
-.kalp-like {
+/* .kalp-like {
 	position: absolute;
 	top: 5rem;
 	left: 1rem;
@@ -30,7 +30,7 @@
 }
 
 .modal-dialog {
-	min-width: 80%; /* New width for default modal */
+	min-width: 80%; 
 }
 
 .detail-col {
@@ -42,49 +42,4 @@
 }
 .zoom-effect:hover {
 	transform: scale(1.1);
-}
-
-.discount-price del {
-	color: rgba(255, 0, 0, 0.5);
-	text-decoration: none;
-	position: relative;
-}
-
-.discount-price del:before {
-	content: " ";
-	display: block;
-	width: 100%;
-	border-top: 2px solid rgba(255, 0, 0, 0.8);
-	height: 12px;
-	position: absolute;
-	bottom: -4px;
-	left: 0;
-	transform: rotate(-7deg);
-}
-
-.discount-price ins {
-	color: green;
-	font-size: 16px;
-	text-decoration: none;
-	padding: 1em 1em 1em 0.5em;
-}
-
-.modal-price del {
-	font-size: 21px;
-}
-.modal-price ins {
-	font-size: 24px;
-}
-
-.modal-price del:before {
-	bottom: 0px;
-}
-
-div.product-title h2 {
-	font-size: 24px;
-}
-
-div.product-id h2 {
-	opacity: 0.4;
-	font-size: 14px;
-}
+} */

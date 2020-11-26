@@ -14,7 +14,7 @@ import { FcLike } from "react-icons/fc";
 
 import useModal from "./useModal";
 import PriceDisplay from "./PriceDisplay";
-import "./Card.css";
+import "./Card.sass";
 
 const CustomCard = (props) => {
 	const [toggle, ModalComp] = useModal();
