@@ -14,6 +14,7 @@ import {
 	FormGroup,
 	InputGroupAddon,
 	Button,
+	CustomInput,
 } from "reactstrap";
 
 import {
@@ -21,6 +22,7 @@ import {
 	filterStock,
 	sortByPrice,
 } from "../state/ducks/homePage/actions";
+import Switch from "./Switch";
 
 const SortAndSearch = () => {
 	const { searchTermRedux, filterByStockRedux, sortByRedux } = useSelector(
@@ -44,7 +46,11 @@ const SortAndSearch = () => {
 	};
 
 	const handleDropDown = (e) => {
-		dispatch(filterStock(e.target.value));
+		if (e) {
+			dispatch(filterStock("1"));
+		} else {
+			dispatch(filterStock("0"));
+		}
 	};
 
 	const handleSort = (e) => {
@@ -97,21 +103,11 @@ const SortAndSearch = () => {
 							},
 						]}
 						handleFunc={handleSort}
-						state={sortByRedux}
 					></DropDown>
-					<DropDown
-						options={[
-							{
-								value: 0,
-								text: "All Products",
-							},
-							{
-								value: 1,
-								text: "Only in Stock",
-							},
-						]}
+					<Switch
+						initialState={filterByStockRedux === "1"}
 						handleFunc={handleDropDown}
-					></DropDown>
+					></Switch>
 				</Col>
 			</Row>
 			<Row className="mb-1">

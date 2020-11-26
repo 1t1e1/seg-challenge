@@ -2,6 +2,9 @@
 
 - [x] Redux in icinde searchTerm filterTerm & sortTerm olarak sekilde degistir.
 - [ ] refactor sort&search comps
+  - [x] switch
+  - [ ] chip filter
+  - [ ] layout serach bar
 - [ ] compare func utils olarak ayir.
 - [ ] Detayı görüntüleme popup degil de router uzerinde yapilmasi daha ii olur mu?
 
@@ -31,8 +34,14 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 **prob:** Node-sass@5 asagidaki hatayi veriyor. 4.14 ve daha dusuk surumler [linkteki](https://stackoverflow.com/questions/64625050/error-node-sass-version-5-0-0-is-incompatible-with-4-0-0) hatayi veriyor.
 
-**sol:** tekrar dene
+**sol:** tekrar dene. 2,3 saat sonra cozuldu.
 
 ### #3
 
 **prob:** Chromium browser daki goruntu nedeni bilmedigim bir sekilde bozuldu.
+
+### #4
+
+**prob:** CardContainer yuklenirken tum (gosterilmeyenler dahil) basiliyor. Basilmamasi gerekiyor.
+
+**sol:** ?
