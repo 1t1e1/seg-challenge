@@ -18,9 +18,6 @@ const CustomModal = (props) => {
 	const toggle = () => setModal(!modal);
 
 	const ModalComp = (props) => {
-		let tastesArray = props.params.tastes.split(",");
-		let tastes = tastesArray.join(" ");
-
 		return (
 			<Modal isOpen={modal} toggle={toggle}>
 				<ModalHeader toggle={toggle}>Detail for {props.name}</ModalHeader>
@@ -34,31 +31,20 @@ const CustomModal = (props) => {
 							/>
 						</Col>
 						<Col xs="6" md="6" className="text-left">
-							<h2>Product Name: {props.name}</h2>
-							<h4>
-								Product Id: <span>{props.productId}</span>
-							</h4>
-							<PriceDisplay {...props}></PriceDisplay>
-							{tastes && (
-								<h3 className="text-left">
-									<span className="detail-col">Tastes : </span>
-									{tastes}
-								</h3>
-							)}
-
-							{props.brand && (
-								<h3 className="text-left">
-									<span className="detail-col">Brand : </span>
-									{props.brand}
-								</h3>
-							)}
-
-							{props.params.region && (
-								<h3 className="text-left">
-									<span className="detail-col">Region : </span>
-									{props.params.region}
-								</h3>
-							)}
+							<Info
+								valueOfInfo={props.name}
+								title="Wine Name"
+								className="product-title"
+							></Info>
+							<Info
+								valueOfInfo={props.productId}
+								title="Id"
+								className="product-id"
+							></Info>
+							<PriceDisplay {...props} className="modal-price"></PriceDisplay>
+							<Info valueOfInfo={props.params.tastes} title="Tastes"></Info>
+							<Info valueOfInfo={props.brand} title="Brand"></Info>
+							<Info valueOfInfo={props.params.region} title="Region"></Info>
 						</Col>
 					</Row>
 				</ModalBody>
@@ -81,3 +67,16 @@ const CustomModal = (props) => {
 };
 
 export default CustomModal;
+
+const Info = (props) => {
+	return (
+		<div className={props.className}>
+			{props.valueOfInfo && (
+				<h2 className="text-left">
+					<span className="detail-col">{props.title} : </span>
+					{props.valueOfInfo}
+				</h2>
+			)}
+		</div>
+	);
+};

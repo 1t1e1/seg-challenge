@@ -68,3 +68,23 @@
 	text-decoration: none;
 	padding: 1em 1em 1em 0.5em;
 }
+
+.modal-price del {
+	font-size: 21px;
+}
+.modal-price ins {
+	font-size: 24px;
+}
+
+.modal-price del:before {
+	bottom: 0px;
+}
+
+div.product-title h2 {
+	font-size: 24px;
+}
+
+div.product-id h2 {
+	opacity: 0.4;
+	font-size: 14px;
+}
