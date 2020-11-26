@@ -6,11 +6,14 @@ import SortAndSearch from "../components/SortAndSearch";
 import CustomCard from "./Card";
 
 export default function CardsContainer() {
-	const { isLoading, content, searchTerm } = useSelector((state) => ({
-		isLoading: state.homePage.isLoading,
-		content: state.homePage.content,
-		searchTerm: state.homePage.searchTerm,
-	}));
+	const { isLoading, content, searchTerm, filterByStock } = useSelector(
+		(state) => ({
+			isLoading: state.homePage.isLoading,
+			content: state.homePage.content,
+			searchTerm: state.homePage.searchTerm,
+			filterByStock: state.homePage.filterByStock,
+		})
+	);
 
 	if (isLoading) return <div>Loading</div>;
 
@@ -18,21 +21,26 @@ export default function CardsContainer() {
 		product.name.toLowerCase().includes(searchTerm.trim().toLowerCase())
 	);
 
+	const filteredContent = searchedContent.filter((product) =>
+		filterByStock === "1" ? product.inStock : true
+	);
+
 	return (
 		<>
 			<Container>
 				<Button
 					onClick={() => {
-						console.log(`search term |${searchTerm}|`);
-						console.log(`search arr `, searchedContent);
+						// console.log(`filter term |${typeof filterByStock}|`);
+						console.log(`filter term |${filterByStock}|`);
+						console.log(`filte arr `, filteredContent);
 					}}
 				>
 					Search Term
 				</Button>
 				<SortAndSearch></SortAndSearch>
-				{searchedContent.length ? (
+				{filteredContent.length ? (
 					<Row className="row-cols-5">
-						{searchedContent.map((wine, index) => (
+						{filteredContent.map((wine, index) => (
 							<Col
 								xs={{ size: 10, offset: 1 }}
 								sm={{ size: 6, offset: 0 }}

@@ -23,23 +23,12 @@ const searchWine = (wineName) => {
 		payload: wineName,
 	};
 };
-const searchWine1 = (wineName) => {
-	return {
-		type: Actions.SEARCH1,
-		payload: wineName,
-	};
-};
 
-const filterStock = (str) => {
-	if (str === "true") {
-		return {
-			type: Actions.FILTER_STOCK,
-		};
-	} else {
-		return {
-			type: Actions.DEFAULT_ORDER,
-		};
-	}
+const filterStock = (bln) => {
+	return {
+		type: Actions.FILTER_STOCK,
+		payload: bln,
+	};
 };
 
 const sortByPrice = (direction) => {
@@ -57,4 +46,4 @@ const sortByPrice = (direction) => {
 	}
 };
 
-export { getData, searchWine, searchWine1, filterStock, sortByPrice };
+export { getData, searchWine, filterStock, sortByPrice };

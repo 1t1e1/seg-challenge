@@ -18,7 +18,6 @@ import {
 
 import {
 	searchWine,
-	searchWine1,
 	filterStock,
 	sortByPrice,
 } from "../state/ducks/homePage/actions";
@@ -111,16 +110,15 @@ const SortAndSearch = (props) => {
 					<DropDown
 						options={[
 							{
-								value: true,
-								text: "Only in Stock",
+								value: 0,
+								text: "All Products",
 							},
 							{
-								value: false,
-								text: "All Products",
+								value: 1,
+								text: "Only in Stock",
 							},
 						]}
 						handleFunc={handleDropDown}
-						choose={filterStock}
 					></DropDown>
 				</Col>
 			</Row>
