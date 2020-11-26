@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
 	InputGroup,
 	InputGroupButtonDropdown,
@@ -22,25 +22,25 @@ import {
 	sortByPrice,
 } from "../state/ducks/homePage/actions";
 
-const SortAndSearch = (props) => {
+const SortAndSearch = () => {
+	const { searchTermRedux, filterByStockR, sortByR } = useSelector((state) => ({
+		searchTermRedux: state.homePage.searchTerm,
+		filterByStockR: state.homePage.filterByStock,
+		sortByR: state.homePage.sortBy,
+	}));
+
 	const [searchTerm, setSearchTerm] = useState("");
-	const [searchFilter, setSearchFilter] = useState("");
+
 	const [sortBy, setSortBy] = useState("");
 
 	const dispatch = useDispatch();
 	const handleSearch = (e) => {
 		e.preventDefault();
-		setSearchFilter(searchTerm);
+		dispatch(searchWine(searchTerm));
 	};
 
-	useEffect(() => {
-		// dispatch(searchWine(searchFilter));
-		dispatch(searchWine(searchFilter));
-		if (searchTerm === searchFilter) setSearchTerm("");
-	}, [searchFilter]);
-
-	const handleFilterDisable = (e) => {
-		setSearchFilter("");
+	const handleSearchDisable = (e) => {
+		dispatch(searchWine(""));
 	};
 
 	const handleDropDown = (e) => {
@@ -119,7 +119,7 @@ const SortAndSearch = (props) => {
 				</Col>
 			</Row>
 			<Row className="mb-1">
-				{searchFilter && Word(searchFilter, handleFilterDisable)}
+				{searchTermRedux && Word(searchTermRedux, handleSearchDisable)}
 				{sortBy && Word("Sort By " + sortBy.toUpperCase(), handleSortByDisable)}
 			</Row>
 		</>
