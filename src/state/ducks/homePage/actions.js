@@ -18,23 +18,39 @@ const getData = (url) => {
 };
 
 const searchWine = (wineName) => {
-	return {
-		type: Actions.SEARCH,
-		payload: wineName,
+	return (dispatch) => {
+		// FIXME  Dispatch multiple action correct way // research
+		dispatch({
+			type: Actions.SEARCH,
+			payload: wineName,
+		});
+		dispatch({
+			type: Actions.DEFAULT_ORDER,
+		});
 	};
 };
 
 const filterStock = (bln) => {
-	return {
-		type: Actions.FILTER_STOCK,
-		payload: bln,
+	return (dispatch) => {
+		dispatch({
+			type: Actions.FILTER_STOCK,
+			payload: bln,
+		});
+		dispatch({
+			type: Actions.DEFAULT_ORDER,
+		});
 	};
 };
 
 const sortByPrice = (direction) => {
-	return {
-		type: Actions.SORT,
-		payload: direction,
+	return (dispatch) => {
+		dispatch({
+			type: Actions.SORT,
+			payload: direction,
+		});
+		dispatch({
+			type: Actions.DEFAULT_ORDER,
+		});
 	};
 };
 

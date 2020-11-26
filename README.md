@@ -5,7 +5,7 @@
   - [x] 2: filter& mv to homepage filter.
   - [x] 2: sort mv to homepage filter.
   - [ ] 2: refactor sort&search comp state
-  - [ ] 3: all to redux.
+  - [x] 3: all to redux.
   - [ ] 4: compare func utils olarak ayir.
 - [ ] Detayı görüntüleme popup degil de router uzerinde yapilmasi daha ii olur mu?
 
@@ -36,3 +36,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 **prob:** Node-sass@5 asagidaki hatayi veriyor. 4.14 ve daha dusuk surumler [linkteki](https://stackoverflow.com/questions/64625050/error-node-sass-version-5-0-0-is-incompatible-with-4-0-0) hatayi veriyor.
 
 **sol:** tekrar dene
+
+### #3
+
+**prob:** Chromium browser daki goruntu nedeni bilmedigim bir sekilde bozuldu.

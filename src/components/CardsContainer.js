@@ -1,65 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
-import { Col, Row, Container, Button } from "reactstrap";
+import { Col, Row, Container } from "reactstrap";
 
 import SortAndSearch from "../components/SortAndSearch";
 import CustomCard from "./Card";
 
 export default function CardsContainer() {
-	const { isLoading, content, searchTerm, filterByStock, sortBy } = useSelector(
-		(state) => ({
-			isLoading: state.homePage.isLoading,
-			content: state.homePage.content,
-			searchTerm: state.homePage.searchTerm,
-			filterByStock: state.homePage.filterByStock,
-			sortBy: state.homePage.sortBy,
-		})
-	);
+	const { isLoading, content } = useSelector((state) => ({
+		isLoading: state.homePage.isLoading,
+		content: state.homePage.content,
+	}));
 
 	if (isLoading) return <div>Loading</div>;
-
-	const searchedContent = content.filter((product) =>
-		product.name.toLowerCase().includes(searchTerm.trim().toLowerCase())
-	);
-
-	const filteredContent = searchedContent.filter((product) =>
-		filterByStock === "1" ? product.inStock : true
-	);
-
-	let sortedContent;
-	if ("default" === sortBy) {
-		sortedContent = filteredContent;
-	} else {
-		let compareFunc = function (a, b) {
-			let _a = parseFloat(a.price),
-				_b = parseFloat(b.price);
-			if (_a - _b === 0) {
-				return _a < _b ? 1 : -1;
-			} else {
-				if (sortBy === "asc") return _a - _b;
-				return _b - _a;
-			}
-		};
-
-		sortedContent = filteredContent.sort(compareFunc);
-	}
 
 	return (
 		<>
 			<Container>
-				<Button
-					onClick={() => {
-						// console.log(`filter term |${typeof filterByStock}|`);
-						console.log(`sort term |${sortBy}|`);
-						console.log(`sort arr `, sortBy);
-					}}
-				>
-					Search Term
-				</Button>
 				<SortAndSearch></SortAndSearch>
-				{sortedContent.length ? (
+				{content.length ? (
 					<Row className="row-cols-5">
-						{sortedContent.map((wine, index) => (
+						{content.map((wine, index) => (
 							<Col
 								xs={{ size: 10, offset: 1 }}
 								sm={{ size: 6, offset: 0 }}

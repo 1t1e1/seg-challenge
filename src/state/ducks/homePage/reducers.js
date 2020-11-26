@@ -43,9 +43,37 @@ function dataReducer(state = initialState, action) {
 			};
 
 		case Actions.DEFAULT_ORDER:
+			const searchedContent = state.data.filter((product) =>
+				product.name
+					.toLowerCase()
+					.includes(state.searchTerm.trim().toLowerCase())
+			);
+
+			const filteredContent = searchedContent.filter((product) =>
+				state.filterByStock === "1" ? product.inStock : true
+			);
+
+			let sortedContent;
+			if ("default" === state.sortBy) {
+				sortedContent = filteredContent;
+			} else {
+				let compareFunc = function (a, b) {
+					let _a = parseFloat(a.price),
+						_b = parseFloat(b.price);
+					if (_a - _b === 0) {
+						return _a < _b ? 1 : -1;
+					} else {
+						if (state.sortBy === "asc") return _a - _b;
+						return _b - _a;
+					}
+				};
+
+				sortedContent = filteredContent.sort(compareFunc);
+			}
+
 			return {
 				...state,
-				content: state.data,
+				content: sortedContent,
 			};
 
 		case Actions.SORT:
