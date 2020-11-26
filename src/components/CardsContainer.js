@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Col, Row, Container } from "reactstrap";
 
-import SortAndSearch from "../components/SortAndSearch";
 import CustomCard from "./Card";
 
 export default function CardsContainer() {
@@ -16,7 +15,6 @@ export default function CardsContainer() {
 	return (
 		<>
 			<Container>
-				<SortAndSearch></SortAndSearch>
 				{content.length ? (
 					<Row className="row-cols-5">
 						{content.map((wine, index) => (

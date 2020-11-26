@@ -8,8 +8,8 @@ const Switch = ({ initialState, handleFunc }) => {
 	}, [state]);
 
 	return (
-		<Form>
-			<FormGroup>
+		<Form className="ml-3">
+			<FormGroup style={{ color: "white" }}>
 				<CustomInput
 					type="switch"
 					id="exampleCustomSwitch"

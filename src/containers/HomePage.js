@@ -19,8 +19,8 @@ export default function HomePage() {
 
 	return (
 		<Container fluid>
-			<SimpleNavbar> </SimpleNavbar>
-			{/* <CompanyPic></CompanyPic> */}
+			{/* <SimpleNavbar> </SimpleNavbar> */}
+			<CompanyPic></CompanyPic>
 			<CardsContainer></CardsContainer>
 		</Container>
 	);

@@ -63,7 +63,7 @@ const SortAndSearch = () => {
 
 	return (
 		<>
-			<Row className="my-1">
+			<Row className="">
 				<Col
 					xs={{ size: "auto", offset: "auto", ml: "1" }}
 					md={{ size: "3", offset: "1", ml: "4" }}
