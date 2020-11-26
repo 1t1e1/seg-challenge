@@ -10,6 +10,8 @@ import {
 	ModalFooter,
 } from "reactstrap";
 
+import PriceDisplay from "./PriceDisplay";
+
 const CustomModal = (props) => {
 	const [modal, setModal] = useState(false);
 
@@ -36,20 +38,7 @@ const CustomModal = (props) => {
 							<h4>
 								Product Id: <span>{props.productId}</span>
 							</h4>
-
-							<h3>
-								{props.priceText}{" "}
-								<small
-									style={{
-										textDecorationLine: "line-through",
-										textDecorationStyle: "solid",
-										color: "gray",
-									}}
-								>
-									{props.oldPriceText}
-								</small>
-							</h3>
-
+							<PriceDisplay {...props}></PriceDisplay>
 							{tastes && (
 								<h3 className="text-left">
 									<span className="detail-col">Tastes : </span>

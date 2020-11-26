@@ -37,9 +37,34 @@
 	font-weight: bold;
 }
 
-.turning-effect {
+.zoom-effect {
 	transition: all 0.2s ease-in-out;
 }
-.turning-effect:hover {
+.zoom-effect:hover {
 	transform: scale(1.1);
+}
+
+.discount-price del {
+	color: rgba(255, 0, 0, 0.5);
+	text-decoration: none;
+	position: relative;
+}
+
+.discount-price del:before {
+	content: " ";
+	display: block;
+	width: 100%;
+	border-top: 2px solid rgba(255, 0, 0, 0.8);
+	height: 12px;
+	position: absolute;
+	bottom: -4px;
+	left: 0;
+	transform: rotate(-7deg);
+}
+
+.discount-price ins {
+	color: green;
+	font-size: 16px;
+	text-decoration: none;
+	padding: 1em 1em 1em 0.5em;
 }

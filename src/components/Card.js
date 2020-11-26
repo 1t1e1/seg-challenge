@@ -1,4 +1,4 @@
-import React, { Children } from "react";
+import React from "react";
 import {
 	Card,
 	CardImg,
@@ -13,13 +13,14 @@ import {
 import { FcLike } from "react-icons/fc";
 
 import useModal from "./useModal";
+import PriceDisplay from "./PriceDisplay";
 import "./Card.css";
 
 const CustomCard = (props) => {
 	const [toggle, ModalComp] = useModal();
 
 	return (
-		<Card className="text-center shadow-lg p-3 mb-5 bg-white rounded turning-effect">
+		<Card className="text-center shadow-lg p-3 mb-5 bg-white rounded zoom-effect">
 			<Row>
 				<Col md="12">
 					<span className="product-indirim">{props.priceText}</span>
@@ -37,22 +38,13 @@ const CustomCard = (props) => {
 				</Col>
 				<Col md="12">
 					<CardBody>
-						<CardTitle tag="h4">
-							{props.priceText}{" "}
-							<small
-								style={{
-									textDecorationLine: "line-through",
-									textDecorationStyle: "solid",
-									color: "gray",
-								}}
-							>
-								{props.oldPriceText}
-							</small>
-						</CardTitle>
 						<CardSubtitle tag="h6" className="mb-2 text-muted">
 							{props.name}
 						</CardSubtitle>
+
 						<CardText></CardText>
+						<PriceDisplay {...props}></PriceDisplay>
+
 						<Button
 							color={props.inStock ? "warning" : "secondary"}
 							disabled={!props.inStock}
