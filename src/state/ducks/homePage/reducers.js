@@ -6,6 +6,7 @@ const initialState = {
 	isLoading: false,
 	isError: false,
 	errorMessage: "",
+	searchTerm: "",
 };
 
 function dataReducer(state = initialState, action) {
@@ -31,15 +32,17 @@ function dataReducer(state = initialState, action) {
 		case Actions.SEARCH:
 			return {
 				...state,
-				content: state.data.filter((item) =>
-					item.name.toLowerCase().includes(action.payload.trim().toLowerCase())
-				),
+				searchTerm: action.payload,
 			};
-
 		case Actions.FILTER_STOCK:
 			return {
 				...state,
 				content: state.data.filter((item) => item.inStock),
+			};
+		case Actions.SEARCH1:
+			return {
+				...state,
+				filterByStock: action.payload,
 			};
 
 		case Actions.DEFAULT_ORDER:

@@ -1,6 +1,9 @@
 ## TOD0S
 
 - [ ] Redux in icinde searchTerm filterTerm & sortTerm olarak sekilde degistir.
+  - [x] 1: searchTerm mv to homepage filter.
+  - [ ] 2: filter& sort mv to homepage filter.
+  - [ ] 3: all to redux.
 - [ ] Detayı görüntüleme popup degil de router uzerinde yapilmasi daha ii olur mu?
 
 ### STYLES TOD0S

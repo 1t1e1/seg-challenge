@@ -18,6 +18,7 @@ import {
 
 import {
 	searchWine,
+	searchWine1,
 	filterStock,
 	sortByPrice,
 } from "../state/ducks/homePage/actions";
@@ -34,6 +35,7 @@ const SortAndSearch = (props) => {
 	};
 
 	useEffect(() => {
+		// dispatch(searchWine(searchFilter));
 		dispatch(searchWine(searchFilter));
 		if (searchTerm === searchFilter) setSearchTerm("");
 	}, [searchFilter]);

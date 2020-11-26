@@ -23,6 +23,12 @@ const searchWine = (wineName) => {
 		payload: wineName,
 	};
 };
+const searchWine1 = (wineName) => {
+	return {
+		type: Actions.SEARCH1,
+		payload: wineName,
+	};
+};
 
 const filterStock = (str) => {
 	if (str === "true") {
@@ -51,4 +57,4 @@ const sortByPrice = (direction) => {
 	}
 };
 
-export { getData, searchWine, filterStock, sortByPrice };
+export { getData, searchWine, searchWine1, filterStock, sortByPrice };
