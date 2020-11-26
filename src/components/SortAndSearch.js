@@ -23,17 +23,17 @@ import {
 } from "../state/ducks/homePage/actions";
 
 const SortAndSearch = () => {
-	const { searchTermRedux, filterByStockR, sortByR } = useSelector((state) => ({
-		searchTermRedux: state.homePage.searchTerm,
-		filterByStockR: state.homePage.filterByStock,
-		sortByR: state.homePage.sortBy,
-	}));
-
+	const { searchTermRedux, filterByStockRedux, sortByRedux } = useSelector(
+		(state) => ({
+			searchTermRedux: state.homePage.searchTerm,
+			filterByStockRedux: state.homePage.filterByStock,
+			sortByRedux: state.homePage.sortBy,
+		})
+	);
 	const [searchTerm, setSearchTerm] = useState("");
 
-	const [sortBy, setSortBy] = useState("");
-
 	const dispatch = useDispatch();
+
 	const handleSearch = (e) => {
 		e.preventDefault();
 		dispatch(searchWine(searchTerm));
@@ -49,15 +49,11 @@ const SortAndSearch = () => {
 
 	const handleSort = (e) => {
 		let value = e.target.value;
-		setSortBy(value);
+		dispatch(sortByPrice(value));
 	};
 	const handleSortByDisable = () => {
-		setSortBy("");
+		dispatch(sortByPrice(""));
 	};
-
-	useEffect(() => {
-		dispatch(sortByPrice(sortBy));
-	}, [sortBy]);
 
 	return (
 		<>
@@ -101,7 +97,7 @@ const SortAndSearch = () => {
 							},
 						]}
 						handleFunc={handleSort}
-						state={sortBy}
+						state={sortByRedux}
 					></DropDown>
 					<DropDown
 						options={[
@@ -120,7 +116,8 @@ const SortAndSearch = () => {
 			</Row>
 			<Row className="mb-1">
 				{searchTermRedux && Word(searchTermRedux, handleSearchDisable)}
-				{sortBy && Word("Sort By " + sortBy.toUpperCase(), handleSortByDisable)}
+				{sortByRedux &&
+					Word("Sort By " + sortByRedux.toUpperCase(), handleSortByDisable)}
 			</Row>
 		</>
 	);
