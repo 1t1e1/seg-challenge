@@ -49,11 +49,7 @@ const SortAndSearch = (props) => {
 
 	const handleSort = (e) => {
 		let value = e.target.value;
-		if (value === "default") {
-			setSortBy("");
-		} else {
-			setSortBy(value);
-		}
+		setSortBy(value);
 	};
 	const handleSortByDisable = () => {
 		setSortBy("");

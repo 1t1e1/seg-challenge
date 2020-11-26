@@ -8,6 +8,7 @@ const initialState = {
 	errorMessage: "",
 	searchTerm: "",
 	filterByStock: 0,
+	sortBy: "",
 };
 
 function dataReducer(state = initialState, action) {
@@ -48,21 +49,9 @@ function dataReducer(state = initialState, action) {
 			};
 
 		case Actions.SORT:
-			let compareFunc = function (a, b) {
-				let _a = parseFloat(a.price),
-					_b = parseFloat(b.price);
-				if (_a - _b === 0) {
-					return _a < _b ? 1 : -1;
-				} else {
-					if (action.payload === "asc") return _a - _b;
-					return _b - _a;
-				}
-			};
-
-			let data = [...state.content];
 			return {
 				...state,
-				content: data.sort(compareFunc),
+				sortBy: action.payload,
 			};
 
 		default:

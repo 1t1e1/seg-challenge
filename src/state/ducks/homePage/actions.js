@@ -32,18 +32,10 @@ const filterStock = (bln) => {
 };
 
 const sortByPrice = (direction) => {
-	if (direction === "default") {
-		return {
-			type: Actions.DEFAULT_ORDER,
-		};
-	} else {
-		return (dispatch) => {
-			dispatch({
-				type: Actions.SORT,
-				payload: direction,
-			});
-		};
-	}
+	return {
+		type: Actions.SORT,
+		payload: direction,
+	};
 };
 
 export { getData, searchWine, filterStock, sortByPrice };
