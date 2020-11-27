@@ -12,13 +12,10 @@ import {
 } from "reactstrap";
 import { FcLike } from "react-icons/fc";
 
-import useModal from "./useModal";
 import PriceDisplay from "./PriceDisplay";
 import "./Card.sass";
 
 const CustomCard = (props) => {
-	const [toggle, ModalComp] = useModal();
-
 	return (
 		<Card className="text-center shadow-lg p-3 mb-3 bg-white rounded zoom-effect">
 			<Row>
@@ -27,7 +24,7 @@ const CustomCard = (props) => {
 					{props.params.likeCount > 0 && (
 						<div className="kalp-like">
 							<FcLike />
-							<span>+{props.params.likeCount} </span>
+							<span> {props.params.likeCount} </span>
 						</div>
 					)}
 					<CardImg
@@ -51,13 +48,18 @@ const CustomCard = (props) => {
 						>
 							Buy
 						</Button>
-						<Button color="info" className="ml-2" onClick={toggle}>
+						<Button
+							color="info"
+							className="ml-2"
+							onClick={() => {
+								props.handleModal(props.productId);
+							}}
+						>
 							Detail
 						</Button>
 					</CardBody>
 				</Col>
 			</Row>
-			<ModalComp {...props}></ModalComp>
 		</Card>
 	);
 };

@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Col, Row, Container } from "reactstrap";
 
 import CustomCard from "./Card";
+import useModal from "./useModal";
 
 export default function CardsContainer() {
 	const { isLoading, content } = useSelector((state) => ({
@@ -10,10 +11,23 @@ export default function CardsContainer() {
 		content: state.homePage.content,
 	}));
 
+	const [modalProps, setmodalprops] = useState({});
+
+	const [isModalActive, toggleModal, ModalComp] = useModal();
+
+	const handleModal = (e) => {
+		const foundProduct = content.find((product) => product.productId === e);
+		setmodalprops(foundProduct);
+		toggleModal();
+		// FIXME suan calisiyor ama statelerinin iliskisi hakinda dusunmem gerek.
+		// useReducer ile iki state i bagli yapmak daha mantikli geliyor.
+	};
+
 	if (isLoading) return <div>Loading</div>;
 
 	return (
 		<>
+			{isModalActive && <ModalComp {...modalProps}></ModalComp>}
 			<Container className="mt-3">
 				{content.length ? (
 					<Row className="row-cols-5">
@@ -28,7 +42,7 @@ export default function CardsContainer() {
 							>
 								{/* // xl={{ size: 2, offset: (5 * index + 1) % 5 === 1 ? 0 : 0 }}
 								// TODO xl icin 5 column yap. > */}
-								<CustomCard {...wine}></CustomCard>
+								<CustomCard {...wine} handleModal={handleModal}></CustomCard>
 							</Col>
 						))}
 					</Row>

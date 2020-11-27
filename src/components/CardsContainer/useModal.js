@@ -63,7 +63,7 @@ const CustomModal = (props) => {
 		);
 	};
 
-	return [toggle, ModalComp];
+	return [modal, toggle, ModalComp];
 };
 
 export default CustomModal;

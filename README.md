@@ -2,17 +2,18 @@
 
 - [x] Components dir in icindekileri siniflandir.
 - [ ] refactor sort&search comps
-  - [x] switch
   - [ ] chip filter
   - [ ] layout serach bar
 - [ ] compare func utils olarak ayir.
-- [ ] Detay popupin yerini degistir [issue#4](#4)
+- [x] Detay popupin yerini degistir [issue#4](#4)
+- [ ] Detay popupin statelerin iliskisininin arastir.
 
 ### STYLES TOD0S
 
 - [ ] Jumbotron company pic.
   - [x] kenarlardaki beyaz alanin yok edilmesi lazim.
   - [ ] pic css calismiyor.
+- [ ] switch size buyut.
 - [ ] filter chip i degistir.
 - [ ] Card height fixle esit gorunsen. Buttonlar en altina gelsin.
 - [ ] sort and search componenti yazinini guzellestir.
