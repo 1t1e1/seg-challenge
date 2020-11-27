@@ -20,7 +20,7 @@ const CustomCard = (props) => {
 	const [toggle, ModalComp] = useModal();
 
 	return (
-		<Card className="text-center shadow-lg p-3 mb-5 bg-white rounded zoom-effect">
+		<Card className="text-center shadow-lg p-3 mb-3 bg-white rounded zoom-effect">
 			<Row>
 				<Col md="12">
 					<span className="product-indirim">{props.priceText}</span>

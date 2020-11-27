@@ -14,7 +14,7 @@ export default function CardsContainer() {
 
 	return (
 		<>
-			<Container>
+			<Container className="mt-3">
 				{content.length ? (
 					<Row className="row-cols-5">
 						{content.map((wine, index) => (

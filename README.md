@@ -10,11 +10,13 @@
 
 ### STYLES TOD0S
 
+- [ ] Jumbotron company pic.
+  - [x] kenarlardaki beyaz alanin yok edilmesi lazim.
+  - [ ] pic css calismiyor.
 - [ ] filter chip i degistir.
-- [ ] Card hight fixle esit gorunsen. Buttonlar en altina gelsin.
+- [ ] Card height fixle esit gorunsen. Buttonlar en altina gelsin.
 - [ ] sort and search componenti yazinini guzellestir.
 - [ ] Search a buyutec symbolu koy. Like icin kalp
-- [ ] Navbar in altina resim, sirket ismi gibi birseyler guzel olur.
 - [ ] Satin al sayaci ekle.
 
 ## HOW TO RUN
@@ -39,6 +41,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ### #3
 
 **prob:** Chromium browser daki goruntu nedeni bilmedigim bir sekilde bozuldu.
+
+**obs:** Arama yaptigimda duzeliyor. Yani `http://localhost:3000/?search=` url sinde herkes normal.
+
+**sol:** ?
 
 ### #4
 

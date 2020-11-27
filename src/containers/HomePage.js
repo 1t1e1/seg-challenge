@@ -18,7 +18,7 @@ export default function HomePage() {
 	}, [dispatch]);
 
 	return (
-		<Container fluid>
+		<Container fluid className="p-0">
 			{/* <SimpleNavbar> </SimpleNavbar> */}
 			<CompanyPic></CompanyPic>
 			<CardsContainer></CardsContainer>

@@ -2,19 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Navbar, NavbarBrand } from "reactstrap";
 
-import bgimage from "../red-wine-wallpaper-1.jpg";
-
 const CustomNavbar = (props) => {
 	return (
-		<Navbar
-			color="dark"
-			dark
-			expand="md"
-			style={{ backgroundImage: `url(${bgimage})`, backgroundSize: "cover" }}
-			className="py-5"
-		>
+		<NavbarBrand color="dark" dark expand="md" className="py-5">
 			<NavbarBrand href="/"> {"  "}</NavbarBrand>
-		</Navbar>
+		</NavbarBrand>
 	);
 };
 

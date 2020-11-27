@@ -1,4 +1,19 @@
-/* import bgimage from "../maksym-kaharlytskyi-3uJt73tr4hI-unsplash.jpg"; */
+.jumbotron {
+}
 
 .bg-image-company {
+	background-image: url("../assets/company-pic.jpg");
+	background-size: "center";
+	color: "red";
+	color: "white";
+}
+
+#tampon-pic {
+	display: block;
+	height: 250px;
+	color: "white" !important;
+}
+.bg-image-company div.empty-pic {
+	height: 250px;
+	color: "white";
 }
