@@ -24,7 +24,8 @@
 
 `yarn install` install all dependecies.\
 `yarn start` runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.\
+There is some problem with some browser. [issue#3](#3)
 
 ## ISSUES
 
@@ -43,7 +44,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 **prob:** Chromium browser daki goruntu nedeni bilmedigim bir sekilde bozuldu.
 
-**obs:** Arama yaptigimda duzeliyor. Yani `http://localhost:3000/?search=` url sinde herkes normal.
+**obs:** Arama yaptigimda duzeliyor. Yani searchbar submit oldugunda veya `http://localhost:3000/?search=` url sinde her sey normal gorunuyor.
 
 **sol:** ?
 
