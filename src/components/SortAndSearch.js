@@ -65,7 +65,7 @@ const SortAndSearch = () => {
 		<>
 			<Row className="">
 				<Col
-					xs={{ size: "auto", offset: "auto", ml: "1" }}
+					xs={{ size: "auto", offset: "1", ml: "1" }}
 					md={{ size: "3", offset: "1", ml: "4" }}
 				>
 					<Form onSubmit={handleSearch}>
@@ -82,7 +82,7 @@ const SortAndSearch = () => {
 					</Form>
 				</Col>
 				<Col
-					xs={{ size: "auto", offset: "auto" }}
+					xs={{ size: "auto", offset: "2" }}
 					md={{ size: "auto", offset: "2" }}
 					className="d-flex justify-content-end"
 				>
@@ -105,12 +105,13 @@ const SortAndSearch = () => {
 						handleFunc={handleSort}
 					></DropDown>
 					<Switch
+						className="mp-3"
 						initialState={filterByStockRedux === "1"}
 						handleFunc={handleDropDown}
 					></Switch>
 				</Col>
 			</Row>
-			<Row className="mb-1">
+			<Row className="mx-4  my-4">
 				{searchTermRedux && Word(searchTermRedux, handleSearchDisable)}
 				{sortByRedux &&
 					Word("Sort By " + sortByRedux.toUpperCase(), handleSortByDisable)}
@@ -136,7 +137,7 @@ const DropDown = ({ options = [], handleFunc }) => {
 
 	return (
 		<div>
-			<InputGroup className="ml-3">
+			<InputGroup className="mr-3">
 				<InputGroupButtonDropdown
 					addonType="append"
 					isOpen={dropdownOpen}
