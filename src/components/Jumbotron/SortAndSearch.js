@@ -21,7 +21,7 @@ import {
 	searchWine,
 	filterStock,
 	sortByPrice,
-} from "../state/ducks/homePage/actions";
+} from "../../state/ducks/homePage/actions";
 import Switch from "./Switch";
 
 const SortAndSearch = () => {

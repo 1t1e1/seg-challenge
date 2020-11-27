@@ -1,8 +1,8 @@
 import React from "react";
-import { Jumbotron, Button } from "reactstrap";
+import { Jumbotron } from "reactstrap";
 
 import SortAndSearch from "./SortAndSearch";
-import bgimage from "../assets/company-pic.jpg";
+import bgimage from "../../assets/company-pic.jpg";
 import "./CompanyPic.css";
 
 const Example = (props) => {

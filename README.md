@@ -1,12 +1,12 @@
 ## TOD0S
 
-- [x] Redux in icinde searchTerm filterTerm & sortTerm olarak sekilde degistir.
+- [x] Components dir in icindekileri siniflandir.
 - [ ] refactor sort&search comps
   - [x] switch
   - [ ] chip filter
   - [ ] layout serach bar
 - [ ] compare func utils olarak ayir.
-- [ ] Detayı görüntüleme popup degil de router uzerinde yapilmasi daha ii olur mu?
+- [ ] Detay popupin yerini degistir [issue#4](#4)
 
 ### STYLES TOD0S
 

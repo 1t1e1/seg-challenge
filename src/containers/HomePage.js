@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Container } from "reactstrap";
 
-import CardsContainer from "../components/CardsContainer";
-import CompanyPic from "../components/CompanyPic";
+import CardsContainer from "../components/CardsContainer/CardsContainer";
+import CompanyPic from "../components/Jumbotron/CompanyPic";
 import SimpleNavbar from "../components/SimpleNavbar";
 import { getData } from "../state/ducks/homePage/actions";
 
